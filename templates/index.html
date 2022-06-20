@@ -1,0 +1,229 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta name="description" content="ICT 융합기술 R&D, ICT융합 기술사업화, 서비스 인큐베이팅">
+	<script type="text/javascript" src="./scripts/jquery-1.10.2.js"></script>
+	<!--[if lt IE 9]><script type="text/javascript" src="./scripts/html5_shiv.js"></script><![endif]-->
+	<script type="text/javascript" src="./scripts/modernizr.custom.86080.js"></script>
+	<script type="text/javascript" src="./scripts/respond.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+	<link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+	<script type="text/javascript">
+		document.createElement('header');
+		document.createElement('nav');
+		document.createElement('article');
+		document.createElement('section');
+		document.createElement('aside');
+		document.createElement('footer');
+	</script>
+	<script>
+/*
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-52163775-1', 'kdml.co.kr');
+  ga('send', 'pageview');
+*/
+
+</script>
+	<script>
+		$(function () {
+			var pull = $('#pull');
+			menu = $('nav ul');
+			menuHeight = menu.height();
+
+			$(pull).on('click', function (e) {
+				e.preventDefault();
+				menu.slideToggle();
+			});
+
+			$(window).resize(function () {
+				var w = $(window).width();
+				if (w > 320 && menu.is(':hidden')) {
+					menu.removeAttr('style');
+				}
+			});
+		});
+
+		function alertShow(number) {
+			if(number == '1') // 지원신청서
+			{
+				window.open('http://kdml.co.kr/home/download/TCA14_application.zip', '_self');
+			}
+			else if(number == '2') // 사업 공고문 
+			{
+				window.open('http://kdml.co.kr/home/download/TCA14_notice.hwp', '_self');
+			}
+			else if(number == '3') // 관리규정
+			{
+				window.open('http://kdml.co.kr/home/download/TCA14_regulations.zip', '_self');
+			}
+			else if(number == '4') //별첨
+			{
+				window.open('http://kdml.co.kr/home/download/TCA14_projects.hwp', '_self');
+			}
+			else if(number == '0') //준비
+			{
+				alert('준비중입니다.');
+			}
+			else
+			{
+				alert('모집이 완료되었습니다.');
+			}
+		}
+	</script>
+	<script src="scripts/jquery.carouFredSel-5.5.2.js" type="text/javascript"></script>
+	<script type="text/javascript" src="scripts/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="scripts/jquery.form.js"></script>
+	<script type="text/javascript" src="scripts/scripts.js"></script>
+	<script type="text/javascript" src="scripts/modernizr.custom.86080.js"></script>
+	<title>KU융합소프트웨어연구센터</title>
+
+</head>
+
+<body>
+<!--popup delete-yclee
+<div class="layer_popup">
+	<img id="popupCloseBtn" class="btn_close button_mode" src="img/btn_close.png" alt="" width="22" height="21"/>
+-->
+	<!--
+	<div class="btn_box">
+		<img id="noticeDownloadBtn" class="left_btn button_mode" src="img/download_left.png" alt="" width="210" height="58"/>
+		<img id="applicationDownloadBtn" class="button_mode" src="img/download_right.png" alt="" width="210" height="58"/>
+	</div>
+	-->
+<!--
+</div>
+-->
+
+<div id="bodywrap">
+	<div class="wrapper">
+		<div id="top">
+			<div id="logo">
+				<a href="/">
+					<img id="logoimage" src="{% static 'images/new_logo2.png' %}" alt="logo"> <!-- Logo image -->
+					 <h1 id="logotitle">KU융합소프트웨어연구센터</h1>	<!-- Logo text --></a>
+        </div><!--/logo-->
+           <nav>
+			<ul>
+        <li><a href="{% url '1-1' %}" class="active">Introduction</a>
+        	  <ul>
+            	<li><a href="{% url '1-1' %}">Overview</a></li>
+                <li><a href="{% url '1-2' %}">Team</a></li>
+<!--            <li><a href="1-3.html">Strategies</a></li>
+-->             </ul>
+            </li>  
+        <li><a href="{% url '2-1' %}">Business</a>
+         	  <ul>
+            	<li><a href="{% url '2-1' %}">ICT융합기술<br>R&D</a></li>
+                <li><a href="{% url '2-2' %}">ICT융합<br>기술사업화</a></li>
+                <li><a href="{% url '2-3' %}">서비스 인큐베이팅</a></li>
+              </ul>
+            </li>  
+<!--
+		<li onClick="alertShow();"><a href="#">Technology</a>
+        	  <ul>
+            	<li><a href="#">contents/media Technology</a></li>
+                <li><a href="#">commerce technology</a></li>
+                <li><a href="#">learning technology</a></li>
+              </ul>
+            </li>  
+-->
+<!--         <li><a href="#" onClick="alertShow(0);">Performance</a></li> -->
+        <li><a href="{% url '5-1' %}">Outlinks</a></li>
+    </ul>  
+    <a href="#" id="pull">Menu</a>  
+</nav>
+		</div>
+		<!-- Header Title Start -->
+		<header>
+			<h1>KU융합소프트웨어연구센터는 <span>ICT융합기술</span>을 기반으로 기술사업화와 융합기술R&D를 전문으로 하는 연구소입니다.</h1>
+		</header>
+		<!-- Header Title End -->
+	</div>
+
+
+	<!-- Slideshow Start -->
+	<section id="slideshow">
+
+		<!--9버전 이하의 IE가 아니거나 IE외 다른브라우저일때-->
+		<![if !IE]>
+			<ul class="slideshow">
+				<li>
+					<span>Image 02</span>
+					<div>
+						<h2>ICT융합 기술사업화</h2>
+						<p>대학원천기술을 상용화할 수 있는 ICT융합 사업을 기획하고 사업화합니다.</p>
+					</div>
+				</li>
+
+				<li>
+					<span>Image 01</span>
+					<div>
+						<h2>ICT융합기술R&D</h2>
+						<p>기존산업에 접목할 수 있는 ICT분야의 융합기술 및 시스템을 기획하고 개발 컨설팅을 진행합니다.</p>
+					</div>
+				</li>
+				<li>
+					<span>Image 03</span>
+					<div>
+						<h2>서비스 인큐베이팅</h2>
+						<p>창의적인 ICT융합사업 아이디어를 인큐베이팅합니다. </p>
+					</div>
+				</li>
+			</ul>
+		<![endif]>
+
+		<!--IE10 미만 일때-->
+		<!--[if lt IE 10]>
+			<img src="./images/slide1.png" alt="" width="100%" height="100%"/>
+		<![endif]-->
+	</section>
+	<!-- Slideshow End -->
+
+
+	<div class="wrapper">
+		<!-- Text Section Start -->
+		<aside class="left">
+			<h3>Welcome to KU Software Research Center.</h3>
+			<div>
+
+					<p>
+					<span style="vertical-align: middle;"></span>
+				
+				</p>
+
+				<p>
+				</p>
+			</div>
+			
+		</aside>
+		<aside class="right">
+			<h3>Contact Us</h3>
+
+			<div class="map"><p><b>연구소</b>(136-713)  서울시 성북구 안암동5가 고려대학교 자연계캠퍼스 산학관 내</p>
+				<a href="http://maps.naver.com/local/siteview.nhn?code=18902005" target="_blank" class="mapbtn">
+					<div class="ic_map"><span>map으로 이동</span></div>
+				</a></div><div class="clearfix"></div>
+			<ul>
+				<li><img src="{% static 'images/ic_mail.png' %}" width="15"><a href="mailto:easter@korea.ac.kr">easter@korea.ac.kr</a></li>
+			</ul>
+		</aside>
+		<div class="clearfix"></div>
+		<!-- Text Section End -->
+	</div>
+	<div class="push"></div>
+</div>
+
+{#<?#}
+{#  include_once "footer.html"#}
+{#?>#}
+{% include 'footer.html' %}
+
+</body>
+</html>
